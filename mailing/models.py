@@ -38,7 +38,7 @@ class Message(models.Model):
         return self.subject
 
 
-class Mailings(models.Model):
+class Mailing(models.Model):
     """Модель, описывающая настройки рассылки"""
     FREQUENCY_CHOICES = [
         ('DAILY', 'Раз в день'),
@@ -74,7 +74,7 @@ class Mailings(models.Model):
         return f'Рассылка {self.pk}'
 
 
-class MailingsLogs(models.Model):
+class MailingLogs(models.Model):
     """Модель, описывающая логи рассылки"""
 
     STATUS_CHOICES = [
