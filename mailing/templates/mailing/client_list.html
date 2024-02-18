@@ -1,0 +1,21 @@
+{% extends 'mailing/base.html' %}
+{% block content %}
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4 font-weight-normal">Клиенты сервиса</h1>
+</div>
+
+
+<div class="container">
+    {% if object_list%}
+    <div class="row text-center">
+        {% for object in object_list %}
+        {% include 'mailing/includes/inc_client_card.html' %}
+        {% endfor %}
+    </div>
+    {% else %}
+    <h3>Клиентов нет</h3>
+    {% endif %}
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'mailing/base.html' %}
+
+{% block content %}
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4 font-weight-normal">Клиенты сервиса</h1>
+</div>
+<div class="container">
+    <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+        <div class="row text-center">
+            <div class="col-6">
+                <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+                    <div class="my-3 py-3">
+                        <h2 class="display-5">Создать клиента</h2>
+                        <p class="lead">Здесь можно создать нового клиента для своей рассылки </p>
+                        <p><a class="btn btn-secondary" href="{% url 'mailing:client_create'%}" role="button">Начать
+                            &raquo;</a></p>
+                    </div>
+                    <div class="bg-light shadow-sm mx-auto"
+                         style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+                    <div class="my-3 py-3">
+                        <h2 class="display-5">Посмотреть всех клиентов</h2>
+                        <p class="lead">Здесь можно посмотреть, отредактировать, удалить клиентов рассылок </p>
+                        <p><a class="btn btn-secondary" href="{% url 'mailing:client_list'%}" role="button">Перейти
+                            &raquo;</a></p>
+                    </div>
+                    <div class="bg-light shadow-sm mx-auto"
+                         style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

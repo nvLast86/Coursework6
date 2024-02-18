@@ -1,0 +1,40 @@
+{% extends 'mailing/base.html' %}
+{% block content %}
+<div class="col">
+    <div class="card">
+        <div class="card-body">
+            <table class="table">
+                <tr>
+                    <td>Время начала рассылки</td>
+                    <td>{{ object.time_start }}</td>
+                </tr>
+                <tr>
+                    <td>Время завершения рассылки</td>
+                    <td>{{ object.time_end }}</td>
+                </tr>
+              <tr>
+                    <td>Периодичность</td>
+                    <td>{{ object.frequency }}</td>
+                </tr>
+                <tr>
+                    <td>Статус</td>
+                    <td>{{ object.status}}</td>
+                </tr>
+                <tr>
+                    <td>Сообщение</td>
+                    <td>{{ object.message}}</td>
+                </tr>
+
+            </table>
+        </div>
+        {% if user.is_staff %}
+            {% if object.status == "CREATED" or object.status == "STARTED" %}
+             <a class="btn btn-danger" href="{% url 'mailing:change_status_mailing' object.pk %}">Отключить рассылку</a>
+            {% endif %}
+        {% endif %}
+        <div class="card-footer">
+            <a href="{% url 'mailing:mailing_list' %}" class="btn btn-dark"><< Назад</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

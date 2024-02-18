@@ -1,0 +1,47 @@
+{% extends 'mailing/base.html' %}
+{% load mediapath %}
+{% block content %}
+
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+    <div class="col-md-5 p-lg-5 mx-auto my-5">
+        <h1 class="display-4 font-weight-normal">Сервис рассылок</h1>
+        <p class="lead font-weight-normal">Рассылки для информирования и привлечения клиентов.</p>
+        <div class="card-body text-muted">
+            <ul class="list-unstyled mt-3 mb-4">
+                <li>Всего рассылок: {{ mailing_all }}</li>
+                <li>Всего активных рассылок: {{ mailing_active }}</li>
+                <li>Количество уникальных клиентов для рассылок: {{unique_clients}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    {% if posts_list %}
+    <div class="row text-center">
+        {% for post in posts_list %}
+        <div class="col-4">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-2 font-weight-normal">{{post.title}}</h4>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled mt-3 mb-4 text-start m-3">
+                        <li>{{post.content|truncatechars:150}}</li>
+                    </ul>
+                    <p><img src="{% mediapath post.image %}" width="150" height="120" alt="Картинка"></p>
+                    <p><a class="btn btn-secondary" href="{% url 'blog:post_detail' post.pk post.slug  %}"
+                          role="button">Посмотреть &raquo;</a></p>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+
+        {% endif %}
+    </div>
+</div>
+
+
+{% endblock %}

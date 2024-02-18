@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ru" prefix="og: http://ogp.me/ns#">
+<meta charset="utf-8">
+<title>Сервис рассылок</title>
+<head>
+<body>
+
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="/static/css/bootstrap.min.css">
+
+{% include 'mailings/includes/inc_menu.html' %}
+
+<main role="main">
+    {% block content %}
+    {% endblock %}
+    <div class="row">
+    </div>
+</main>
+
+{% include 'mailings/includes/inc_footer.html' %}
+
+    <script src="/static/js/bootstrap.bundle.min.js"></script>
+ </body>
+</html>

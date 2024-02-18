@@ -1,0 +1,20 @@
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+    <h5 class="my-0 mr-md-auto font-weight-normal">
+         <a class="p-2 btn btn-dark" href="{% url 'mailing:home' %}">Главная</a>
+    </h5>
+    <nav class="ms-5">
+
+        {% if user.is_authenticated %}
+            {% if user.is_staff %}
+            <a class="p-2 btn btn-dark" href="{% url 'users:user_list' %}">Пользователи</a>
+            {% endif %}
+        <a class="p-2 btn btn-dark" href="{% url 'mailing:client_menu' %}">Клиенты</a>
+        <a class="p-2 btn btn-dark" href="{% url 'mailing:mailing_menu' %}">Рассылки</a>
+        <a class="p-2 btn btn-dark" href="{% url 'users:profile' %}">Профиль</a>
+        <a class="p-2 btn btn-dark" href="{% url 'users:logout' %}">Выйти</a>
+        {% else %}
+        <a class="p-2 btn btn-dark" href="{% url 'users:login' %}">Войти</a>
+        <a class="p-2 btn btn-dark" href="{% url 'users:register' %}">Регистрация</a>
+        {% endif %}
+    </nav>
+</div>

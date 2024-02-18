@@ -1,0 +1,16 @@
+<div class="col-3">
+    <div class="card mb-4 box-shadow">
+        <div class="card-header">
+            <h3 class="my-2 font-weight-normal">Рассылка №{{object.id}}</h3>
+        </div>
+        <div class="card-body">
+            <ul class="list-unstyled mt-3 mb-4 text-start m-3">
+                            <li>Создатель рассылки - {{object.user}}</li>
+                        </ul>
+
+            <p><a class="btn btn-outline-secondary" href="{% url 'mailing:mailing_detail' object.pk %}" role="button">Посмотреть &raquo;</a></p>
+            <p><a class="btn  btn-outline-warning" href="{% url 'mailing:mailing_update' object.pk %}" role="button">Изменить &raquo;</a></p>
+            <p><a class="btn btn-outline-danger" href="{% url 'mailing:mailing_delete' object.pk %}" role="button">Удалить &raquo;</a></p>
+        </div>
+    </div>
+</div>
