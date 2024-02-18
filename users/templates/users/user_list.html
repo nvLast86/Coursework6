@@ -1,0 +1,22 @@
+{% extends 'mailing/base.html' %}
+{% block content %}
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4 font-weight-normal">Пользователи сервиса</h1>
+</div>
+
+
+<div class="container">
+    {% if object_list%}
+    <div class="row text-center">
+        {% for object in object_list %}
+            {% if  not object.is_staff or not object.is_superuser%}
+                 {% include 'users/includes/inc_user_card.html' %}
+            {% endif %}
+        {% endfor %}
+    </div>
+    {% else %}
+    <h3>Пользователей пока нет</h3>
+    {% endif %}
+</div>
+
+{% endblock %}
