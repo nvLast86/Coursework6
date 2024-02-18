@@ -1,0 +1,6 @@
+Django==4.2.10
+psycopg2
+psycopg2-binary
+pillow
+ipython
+python-dotenv
