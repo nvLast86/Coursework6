@@ -10,6 +10,7 @@ from django.urls import path
 
 
 from config import settings
+from config.celery import app
 from mailing.models import Mailing, MailingLogs
 
 
