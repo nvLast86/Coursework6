@@ -56,18 +56,18 @@ python manage.py add_posts
 python manage.py csu
 
 9. Запуск celery
-Открыть новое окно терминала
+   Открыть новое окно терминала
 
-Из каталога проекта запустить celery командой
+   Из каталога проекта запустить celery командой
 
-celery -A config.celery worker --loglevel=info --pool=solo
+   celery -A config.celery worker --loglevel=info --pool=solo
 
 10. Запуск сервера Django
-Открыть новое окно терминала
+   Открыть новое окно терминала
 
-Запустить сервер
+   Запустить сервер
 
-python manage.py runserver
+   python manage.py runserver
 
 11. Работа с приложением
 Зарегистрироваться
