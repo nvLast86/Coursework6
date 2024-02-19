@@ -63,11 +63,11 @@ python manage.py csu
    celery -A config.celery worker --loglevel=info --pool=solo
 
 10. Запуск сервера Django
-   Открыть новое окно терминала
+    Открыть новое окно терминала
 
-   Запустить сервер
+    Запустить сервер
 
-   python manage.py runserver
+    python manage.py runserver
 
 11. Работа с приложением
 Зарегистрироваться
