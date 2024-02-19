@@ -4,3 +4,7 @@ psycopg2-binary
 pillow
 ipython
 python-dotenv
+pytils
+python-dateutil
+redis
+celery
