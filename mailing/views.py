@@ -138,7 +138,7 @@ class MailingCreateView(LoginRequiredMixin, CreateView):
 
 
 class MailingUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
-    model = Mailings
+    model = Mailing
     form_class = MailingForm
     success_url = reverse_lazy('mailing:mailing_list')
 
@@ -149,7 +149,7 @@ class MailingUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 
 class MailingDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
-    model = Mailings
+    model = Mailing
     success_url = reverse_lazy('mailing:mailing_list')
 
     def test_func(self):
@@ -160,7 +160,7 @@ class MailingDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 def change_status_mailing(request, pk):
     """Отключает рассылку"""
-    obj = get_object_or_404(Mailings, pk=pk)
+    obj = get_object_or_404(Mailing, pk=pk)
     if obj.status == 'CREATED' or 'STARTED':
         obj.status = 'FINISHED'
     obj.save()
