@@ -86,7 +86,7 @@ class MailingLogs(models.Model):
     status = models.TextField(verbose_name='статус попытки', choices=STATUS_CHOICES)
     server_response = models.TextField(verbose_name='ответ почтового сервера', **NULLABLE)
 
-    mailing = models.ForeignKey(Mailings, on_delete=models.CASCADE, verbose_name='рассылка')
+    mailing = models.ForeignKey(Mailing, on_delete=models.CASCADE, verbose_name='рассылка')
 
     class Meta:
         verbose_name = 'лог отправки письма'
