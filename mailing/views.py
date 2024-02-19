@@ -54,7 +54,7 @@ class ClientCreateView(LoginRequiredMixin, CreateView):
 class ClientUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Client
     form_class = ClientForm
-    success_url = reverse_lazy('mailings:client_list')
+    success_url = reverse_lazy('mailing:client_list')
 
     def test_func(self):
         client = self.get_object()
@@ -74,7 +74,7 @@ class ClientDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 @login_required
 def display_mailings_menu(request):
-    return render(request, 'mailing/mailings_menu.html')
+    return render(request, 'mailing/mailing_menu.html')
 
 
 class MailingListView(LoginRequiredMixin, ListView):
@@ -100,7 +100,7 @@ class MailingCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         if form.is_valid():
             # создание рассылки
-            mailings = Mailings.objects.create(
+            mailings = Mailing.objects.create(
                 time_start=form.cleaned_data['time_start'],
                 time_end=form.cleaned_data['time_end'],
                 frequency=form.cleaned_data['frequency'],

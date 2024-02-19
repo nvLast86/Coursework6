@@ -1,6 +1,6 @@
 from django import forms
 
-from mailings.models import Client, Mailings, Message
+from mailing.models import Client, Mailing, Message
 
 
 class StyleFormMixin:
@@ -22,7 +22,7 @@ class ClientForm(StyleFormMixin, forms.ModelForm):
 class MailingForm(StyleFormMixin, forms.ModelForm):
 
     class Meta:
-        model = Mailings
+        model = Mailing
         exclude = ('status', 'user')
         widgets = {
             'time_start': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
