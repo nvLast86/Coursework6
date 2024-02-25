@@ -9,10 +9,10 @@
                 <form method="post">
                     {% csrf_token %}
                     Уверены, что хотите удалить статью? "{{ object }}"<br>
-                    <input type="submit" class="btn btn-outline-danger" value="Уверен"  &raquo;>
+                    <input type="submit" class="btn btn-outline-danger" value="Уверен" >
                 </form>
                 <div class="card-footer">
-                    <a href="{% url 'blog:blogs' %}" class="btn btn-primary">Наш блог</a>
+                    <a href="{% url 'blog:post_list' %}" class="btn btn-primary">Блог</a>
                 </div>
             </div>
         </div>
