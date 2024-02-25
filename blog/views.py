@@ -1,4 +1,5 @@
-from django.views.generic import ListView, DetailView
+from django.urls import reverse_lazy, reverse
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 from blog.models import Post
 from blog.services import cache_posts
@@ -22,3 +23,21 @@ class PostDetailView(DetailView):
         post.increase_views_count()
         return post
 
+
+class PostCreateView(CreateView):
+    model = Post
+    fields = ('title', 'content', 'image',)
+    success_url = reverse_lazy('blog:post_list')
+
+
+class PostUpdateView(UpdateView):
+    model = Post
+    fields = ('title', 'content', 'image',)
+
+    def get_success_url(self):
+        return reverse('blog:post_list', args=[self.object.slug])
+
+
+class PostDeleteView(DeleteView):
+    model = Post
+    success_url = reverse_lazy('blog:post_list')
