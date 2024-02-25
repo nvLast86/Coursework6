@@ -20,7 +20,7 @@ app.autodiscover_tasks()
 
 app.conf.beat_schedule = {
     'create_mailing': {
-        'task': 'mailings.tasks.create_mailing',
+        'task': 'mailing.tasks.create_mailing',
         'schedule': timedelta(minutes=1),
     }
 }
