@@ -1,15 +1,16 @@
 {% load mediapath %}
-<div class="col-lg-4">
-    <div class="card m-2 text-center">
-        <div class="card-body">
-            <img src="{% mediapath object.preview %}" alt="Картинка" width="200" height="200"/>
-            <h2>{{ object.title|title }} </h2>
-            <h6> {{ object.content|slice:":100" }}</h6>
-            <p><a class="btn btn-secondary" href="{% url 'blog:post_detail' object.slug %}">Посмотреть</a></p>
-            <p><a class="btn btn-warning" href="{% url 'blog:post_update' object.pk %}">Изменить</a></p>
-            {% if user.is_superuser %}
-                <p><a class="btn btn-danger" href="{% url 'blog:post_delete' object.pk %}">Удалить</a></p>
-            {% endif %}
-        </div>
-    </div>
-</div>
+
+<div class="col-3">
+                <div class="card mb-4 box-shadow">
+                    <div class="card-header">
+                        <h4 class="my-2 font-weight-normal">{{subject.title}}</h4>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled mt-3 mb-4 text-start m-3">
+                            <li>{{subject.content|truncatechars:150}}</li>
+                        </ul>
+                        <p><img src="{% mediapath subject.image %}" width="150" height="120" alt="Картинка"></p>
+                        <p><a class="btn btn-secondary" href="{% url 'blog:post_detail' subject.pk subject.slug  %}" role="button">Посмотреть &raquo;</a></p>
+                    </div>
+                </div>
+            </div>
