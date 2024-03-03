@@ -168,5 +168,5 @@ EMAIL_USE_TLS = False
 
 REDIS_HOST = os.getenv('REDIS_HOST')
 REDIS_PORT = os.getenv('REDIS_PORT')
-CELERY_BROKER_URL = 'redis://' + REDIS_HOST + ':' + REDIS_PORT + '/0'
+CELERY_BROKER_URL = os.getenv('CELERY_BROKER_URL')
 
