@@ -49,7 +49,7 @@ CREATE DATABASE mailings;
    DB_NAME=название базы данных 
    SECRET_KEY=секретный ключ
 
-   REDIS_HosT, REDIS_PORT =хост и порт redis
+   REDIS_HOST, REDIS_PORT =хост и порт redis
    *В проекте есть шаблон файла .env - .env_example
 
 8. Применение миграций
