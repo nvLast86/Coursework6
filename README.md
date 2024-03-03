@@ -23,13 +23,13 @@ pip install -r requirements.txt
 
 4. Установка и настройка Redis
 Установить
-brew install redis
+sudo apt-get install redis-server
 Запустить
 redis-server
 
 5. Установка и настройка PostgreSQL
 Установить PostreSQL
-brew install postgres
+sudo apt-get install postgres
 Подключиться к PostgreSQL от имени пользователя postgres
 psql -U postgres 
 Создать базу данных mailings
