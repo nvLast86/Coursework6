@@ -10,6 +10,7 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from mailing.forms import ClientForm, MailingForm, MessageForm
 from mailing.models import Client, Message
 from mailing.tasks import *
+from dateutil import parser
 
 
 class HomeView(TemplateView):

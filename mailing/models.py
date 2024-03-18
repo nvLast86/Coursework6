@@ -40,11 +40,14 @@ class Message(models.Model):
 
 class Mailing(models.Model):
     """Модель, описывающая настройки рассылки"""
+
     FREQUENCY_CHOICES = [
-        ('DAILY', 'Раз в день'),
-        ('WEEKLY', 'Раз в неделю'),
-        ('MONTHLY', 'Раз в месяц')
+        ('0', 'один раз'),
+        ('1', 'ежедневно'),
+        ('7', 'еженедельно'),
+        ('30', 'ежемесячно'),
     ]
+
     SLEEP_DICT = {
         'DAILY': 20,
         'WEEKLY': 30,
@@ -52,9 +55,9 @@ class Mailing(models.Model):
     }
 
     STATUS_CHOICES = [
-        ('CREATED', 'Создана'),
-        ('STARTED', 'Запущена'),
-        ('FINISHED', 'Завершена')
+        ('completed', 'завершена'),
+        ('created', 'создана'),
+        ('launched', 'запущена'),
     ]
 
     time_start = models.DateTimeField(verbose_name='время начала рассылки')
