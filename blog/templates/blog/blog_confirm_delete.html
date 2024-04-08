@@ -1,0 +1,21 @@
+{% extends 'mailing/base.html' %}
+
+{% block content %}
+{% load blog_tags %}
+
+<div class="col">
+  <div class="card">
+    <div class="card-body">
+      <form method="post">
+        {% csrf_token %}
+        Уверены, что хотите удалить статью блога "{{ object }}"?
+        <input type="submit" class="btn btn-primary" value="Уверен">
+      </form>
+    </div>
+    <div class="card-footer">
+      <a href="{% url 'blog:blog_list' %}" class="btn btn-primary">Назад</a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

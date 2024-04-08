@@ -1,0 +1,16 @@
+{% load blog_tags %}
+
+<div class="card" style="width: 18rem;">
+    <img src="{% mediapath object.preview %}" class="card-img-top" style="{with: 200px}" title="{{ object.name }}">
+    <div class="card-body">
+        <h5 class="card-title">{{ object.name }}</h5>
+        <p class="card-text">{{ object.contents|slice:":100" }}</p>
+        <a href="{% url 'blog:blog_detail' object.slug %}" class="btn btn-primary">Подробнее</a>
+        {% if perms.blog.change_blog %}
+        <a href="{% url 'blog:blog_update' object.slug %}" class="btn btn-primary">Изменить</a>
+        {% endif %}
+        {% if perms.blog.delete_blog %}
+        <a href="{% url 'blog:blog_delete' object.slug %}" class="btn btn-primary">Удалить</a>
+        {% endif %}
+    </div>
+</div>
