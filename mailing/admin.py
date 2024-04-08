@@ -12,7 +12,7 @@ class MessageAdmin(admin.ModelAdmin):
 
 @admin.register(Mailing)
 class MailingAdmin(admin.ModelAdmin):
-    list_display = ('id', 'time', 'interval', 'status', 'owner')
+    list_display = ('id', 'time', 'periodicity', 'status', 'owner')
     search_fields = ('header', 'time')
     list_filter = ('time',)
 
