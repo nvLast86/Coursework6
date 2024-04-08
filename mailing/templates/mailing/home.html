@@ -1,0 +1,29 @@
+{% extends 'mailing/base.html' %}
+
+{% block content %}
+
+{% include 'mailing/includes/inc_main_menu.html' %}
+
+
+<p>
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-5">Привет, пользователь!</h1>
+</div>
+<p>
+
+
+<div class="row">
+    <li>Количество рассылок всего: {{mailing_count}}</li>
+    <li>Количество активных рассылок: {{active_mailing_count}}</li>
+    <li>Количество уникальных клиентов для рассылок: {{unique_client_count}}</li>
+</div>
+<p>
+<div class="row">
+    {% for object in object_list %}
+    {% include 'blog/includes/inc_blog_card.html' %}
+    {% endfor %}
+</div>
+
+
+<script src="/static/js/bootstrap.bundle.min.js"></script>
+{% endblock %}

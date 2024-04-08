@@ -1,0 +1,12 @@
+{% extends 'mailing/base.html' %}
+
+{% block content %}
+
+{% include 'mailing/includes/inc_main_menu.html' %}
+<p>
+<div class="row">
+    {% for object in object_list %}
+    {% include 'mailing/includes/inc_mailing_card.html' %}
+    {% endfor %}
+</div>
+{% endblock %}

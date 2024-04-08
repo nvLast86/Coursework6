@@ -1,0 +1,11 @@
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <p class="card-text">Имя: {{ object.first_name }}</p>
+        <p class="card-text">Фамилия: {{ object.last_name }}</p>
+        <p class="card-text">Почта: {{ object.email }}</p>
+        <p class="card-text">Владелец: {{ object.owner|default:"Нет владельца" }}</p>
+        <a href="{% url 'mailing:contact_detail' object.pk %}" class="btn btn-primary">Подробнее</a>
+        <a href="{% url 'mailing:contact_update' object.pk %}" class="btn btn-primary">Изменить</a>
+        <a href="{% url 'mailing:contact_delete' object.pk %}" class="btn btn-primary">Удалить</a>
+    </div>
+</div>

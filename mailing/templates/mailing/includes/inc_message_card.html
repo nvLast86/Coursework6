@@ -1,0 +1,9 @@
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <p class="card-text">Тема: {{ object.header }}</p>
+        <p class="card-text">Содержание: {{ object.contents }}</p>
+        <a href="{% url 'mailing:message_detail' object.pk %}" class="btn btn-primary">Подробнее</a>
+        <a href="{% url 'mailing:message_update' object.pk %}" class="btn btn-primary">Изменить</a>
+        <a href="{% url 'mailing:message_delete' object.pk %}" class="btn btn-primary">Удалить</a>
+    </div>
+</div>

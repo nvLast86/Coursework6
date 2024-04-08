@@ -1,0 +1,33 @@
+{% extends 'mailing/base.html' %}
+
+{% block content %}
+
+<div class="col">
+    <div class="card">
+        <div class="card-body">
+            <table class="table">
+                <tr>
+                    <td>Имя</td>
+                    <td>{{ object.first_name }}</td>
+                </tr>
+                <tr>
+                    <td>Фамилия</td>
+                    <td>{{ object.last_name }}</td>
+                </tr>
+                <tr>
+                    <td>Почта</td>
+                    <td>{{ object.email }}</td>
+                </tr>
+                <tr>
+                    <td>Владелец</td>
+                    <td>{{ object.owner }}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="card-footer">
+            <a href="{% url 'mailing:contact_list' %}" class="btn btn-primary">Назад</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

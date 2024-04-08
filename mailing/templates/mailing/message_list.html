@@ -1,0 +1,15 @@
+{% extends 'mailing/base.html' %}
+
+{% block content %}
+
+{% include 'mailing/includes/inc_main_menu.html' %}
+
+<div class="col-12">
+    <a href="{% url 'mailing:message_create' %}" class="btn btn-primary m-2">Создать шаблон сообщения</a>
+</div>
+<div class="row">
+    {% for object in object_list %}
+    {% include 'mailing/includes/inc_message_card.html' %}
+    {% endfor %}
+</div>
+{% endblock %}

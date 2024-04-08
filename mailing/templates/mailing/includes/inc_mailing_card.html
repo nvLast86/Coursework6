@@ -1,0 +1,17 @@
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <p class="card-text">Тема: {{ object.message.header }}</p>
+        <p class="card-text">Содержание: {{ object.message.contents }}</p>
+        <p class="card-text">Почта: {{ object.emails }}</p>
+        <p class="card-text">Время рассылки: {{ object.time }}</p>
+        <p class="card-text">Время последней отправки: {{ object.last_sent }}</p>
+        <p class="card-text">Время начала рассылки: {{ object.start_time }}</p>
+        <p class="card-text">Время окончания рассылки: {{ object.finish_time }}</p>
+        <p class="card-text">Периодичность рассылки: {{ object.interval }}</p>
+        <p class="card-text">Статус рассылки: {{ object.status }}</p>
+        <p class="card-text">Владелец: {{ object.owner|default:"Нет владельца" }}</p>
+        <a href="{% url 'mailing:mailing_detail' object.pk %}" class="btn btn-primary">Подробнее</a>
+        <a href="{% url 'mailing:mailing_update' object.pk %}" class="btn btn-primary">Изменить</a>
+        <a href="{% url 'mailing:mailing_delete' object.pk %}" class="btn btn-primary">Удалить</a>
+    </div>
+</div>
